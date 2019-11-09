@@ -1,5 +1,3 @@
-// The variable passwords will be available here...
-
 document.addEventListener('submit', (event) => {
 	const formChildren = event.target.children
 	let passwordValues = []
@@ -11,6 +9,11 @@ document.addEventListener('submit', (event) => {
 	}
 
 	if (passwordValues.length) {
-		console.log(passwordValues)
+		for (let i = 0; i < passwordValues.length; i++) {
+			if (binarySearch(passwords, passwordValues[i])) {
+				console.log('password found')
+				break
+			}
+		}
 	}
 })
