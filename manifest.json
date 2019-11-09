@@ -3,9 +3,13 @@
   "version": "0.1.0",
   "description": "",
   "manifest_version": 2,
+  "browser_action": {
+    "default_icon": "images/icon.png",
+    "default_popup": "popup/popup.html"
+  },
   "background": {
     "persistent": false,
-    "scripts": ["background.js"]
+    "scripts": ["background/background.js"]
   },
   "content_scripts": [
     {

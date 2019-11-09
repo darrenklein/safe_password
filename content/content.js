@@ -15,6 +15,7 @@ document.addEventListener('submit', (event) => {
 				  from: 'content',
 				  subject: 'showNotification',
 				});
+
 				break
 			}
 		}

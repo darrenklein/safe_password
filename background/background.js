@@ -2,9 +2,11 @@ chrome.runtime.onMessage.addListener((request) => {
 	if (request.from === 'content' && request.subject === 'showNotification') {
 		const notifcationOptions = {
 			type: 'basic',
-			iconUrl: 'icon.png',
+			iconUrl: 'images/icon.png',
 			title: 'Safe Password',
-			message: 'That is a common password.\nConsider changing it.'
+			contextMessage: 'Change that password!',
+			message: 'It is commonly used.',
+			requireInteraction: true
 		}
 
 		chrome.notifications.create(notifcationOptions)
