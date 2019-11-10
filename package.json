@@ -1,0 +1,24 @@
+{
+  "name": "safe_password",
+  "version": "1.0.0",
+  "description": "> Chrome extension",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint ./content/content.js ./content/binary_search.js ./background/*.js || exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darrenklein/safe_password.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/darrenklein/safe_password/issues"
+  },
+  "homepage": "https://github.com/darrenklein/safe_password#readme",
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2"
+  }
+}
