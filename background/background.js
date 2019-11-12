@@ -1,5 +1,5 @@
-chrome.runtime.onMessage.addListener((request) => {
-  if (request.from === 'content' && request.subject === 'showNotification') {
+chrome.runtime.onMessage.addListener(({ showNotification }) => {
+  if (showNotification) {
     const notifcationOptions = {
       type: 'basic',
       iconUrl: 'images/icon.png',

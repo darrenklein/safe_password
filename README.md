@@ -5,4 +5,4 @@ Notify users if a password that they've entered in a form is on the list of the 
 
 ## To-do
 
-As a proof-of-concept, it works - however, it fails to properly check forms where the password input is not a direct child of the form. Need a more robust method for checking the form data.
+How many password scenarios is it necessary to chase down? The current code will find passwords nested at any depth in a form, but it won't work in a situation where a password is submitted by a click POST event that's not not actually a form submission (Google, and Microsoft, seemingly - or at least no submit event is emitted).
