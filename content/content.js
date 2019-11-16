@@ -11,9 +11,7 @@ document.addEventListener('submit', () => {
   if (passwordValues.length) {
     for (let i = 0; i < passwordValues.length; i++) {
       if (binarySearch(passwords, passwordValues[i])) {
-        chrome.runtime.sendMessage({
-          showNotification: true
-        });
+        chrome.runtime.sendMessage(true);
 
         break;
       }

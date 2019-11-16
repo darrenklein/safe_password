@@ -1,4 +1,4 @@
-chrome.runtime.onMessage.addListener(({ showNotification }) => {
+chrome.runtime.onMessage.addListener((showNotification) => {
   if (showNotification) {
     const notifcationOptions = {
       type: 'basic',
