@@ -1,31 +1,36 @@
-const doBinarySearch = (arr, target) => {
-  const arrCopy = [...arr];
-  let left;
-  let right;
-
-  if (arrCopy.length === 0) {
-    return false;
+class BinarySearch {
+  constructor(searchSet) {
+    this.searchSet = searchSet;
+    this.run = this.run.bind(this);
   }
 
-  if (arrCopy.length === 1) {
-    left = [];
-    right = [arrCopy[0]];
-  } else {
-    const boundary = arrCopy.length % 2 === 0 ? arrCopy.length / 2 : (arrCopy.length - 1) / 2;
+  run(target, arr = this.searchSet) {
+    const arrCopy = [...arr];
+    let left;
+    let right;
 
-    left = arrCopy.slice(0, boundary);
-    right = arrCopy.slice(boundary);
+    if (arrCopy.length === 0) {
+      return false;
+    }
+
+    if (arrCopy.length === 1) {
+      left = [];
+      right = [arrCopy[0]];
+    } else {
+      const boundary = arrCopy.length % 2 === 0 ? arrCopy.length / 2 : (arrCopy.length - 1) / 2;
+
+      left = arrCopy.slice(0, boundary);
+      right = arrCopy.slice(boundary);
+    }
+
+    if (target === right[0]) {
+      return true;
+    } else if (right.length === 0) {
+      return false;
+    } else if (target > right[0]) {
+      return this.run(target, right.slice(1));
+    }
+
+    return this.run(target, left);
   }
-
-  if (target === right[0]) {
-    return true;
-  } else if (right.length === 0) {
-    return false;
-  } else if (target > right[0]) {
-    return doBinarySearch(right.slice(1), target);
-  }
-
-  return doBinarySearch(left, target);
-};
-
-const binarySearch = (arr, target) => doBinarySearch(arr, target);
+}
